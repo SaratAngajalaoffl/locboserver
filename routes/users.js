@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 var User = require("../models/user");
 var passport = require("passport");
 var authenticate = require("../authenticate");
+const user = require("../models/user");
 
 router.use(bodyParser.json());
 
@@ -59,6 +60,8 @@ router.post("/login", passport.authenticate("local"), (req, res) => {
 	res.json({
 		success: true,
 		token: token,
+		nickname: req.user.nickname,
+		username: req.user.username,
 		status: "You are successfully logged in!",
 	});
 });
@@ -74,5 +77,25 @@ router.get("/logout", (req, res) => {
 		next(err);
 	}
 });
+
+router.post(
+	"/facebook/token",
+	passport.authenticate("facebook-token"),
+	async (req, res) => {
+		if (req.user) {
+			await req.user.setPassword(req.body.password);
+			req.user.nickname = req.body.nickname;
+			await req.user.save();
+			var token = authenticate.getToken({ _id: req.user._id });
+			res.statusCode = 200;
+			res.setHeader("Content-Type", "application/json");
+			res.json({
+				success: true,
+				token: token,
+				status: "You are successfully logged in!",
+			});
+		}
+	}
+);
 
 module.exports = router;
