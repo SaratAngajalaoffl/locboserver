@@ -1,0 +1,24 @@
+{
+	"posts": {
+		"price": 15,
+		"description": "This is a test product",
+		"Category": "Test",
+		"pic": "/images/carousel/i.PNG",
+		"forsale": true,
+		"forrent": false
+	},
+	"login-token": [
+		"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjRlM2RiMjE4ODIwNTE5MDA4N2FkMGUiLCJpYXQiOjE1OTkwNTk1ODcsImV4cCI6MTU5OTA2MzE4N30.00EkzYSo8Eg1wCWSOv-wTxEaZunHLOrEVLUbXZCcMqo",
+		"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZjRmYzI2MjNmYjQ4NzMxYzQwYzJlYjEiLCJpYXQiOjE1OTkwNjI2NzUsImV4cCI6MTU5OTA2NjI3NX0.ZMU1tpbzJ811Eh55usVKt9sq4NqodGOXNQsm-IuVqkU"
+	],
+	"post-id": "5f4fb78c6bef631a68d4b863",
+	"chats": {
+		"post": "5f4fb78c6bef631a68d4b863",
+		"message": []
+	},
+	"message": {
+		"sender": "5f4fc2623fb48731c40c2eb1",
+		"reciever": "5f4e3db2188205190087ad0e",
+		"text": "Hey,I want to buy your text"
+	}
+}
