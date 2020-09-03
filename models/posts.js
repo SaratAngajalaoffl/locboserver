@@ -13,6 +13,10 @@ var Post = new Schema({
 		required: true,
 		min: 0,
 	},
+	title: {
+		type: String,
+		required: true,
+	},
 	description: {
 		type: String,
 		maxlength: 250,

@@ -6,8 +6,9 @@ var cors = require("cors");
 var passport = require("passport");
 var session = require("express-session");
 var FileStore = require("session-file-store")(session);
-var usersRouter = require("./routes/users");
-var PostRouter = require("./routes/posts");
+var usersRouter = require("./routes/usersRouter");
+var PostRouter = require("./routes/postsRouter");
+var uploadRouter = require("./routes/uploadRouter");
 var config = require("./config");
 var mongoose = require("mongoose");
 
@@ -57,6 +58,7 @@ app.use(express.static(path.join(__dirname, "public")));
 //Router
 app.use("/users", usersRouter);
 app.use("/posts", PostRouter);
+app.use("/imageUpload", uploadRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
