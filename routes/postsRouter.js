@@ -8,7 +8,7 @@ var PostRouter = express.Router();
 PostRouter.use(bodyParser.json());
 
 PostRouter.route("/")
-	.get(authenticate.verifyUser, (req, res, next) => {
+	.get((req, res, next) => {
 		Posts.find({})
 			.populate({ path: "user", select: "username" })
 			.then(
