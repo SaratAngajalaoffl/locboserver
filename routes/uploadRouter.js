@@ -20,14 +20,15 @@ uploadRouter.use(bodyParser.json());
 
 uploadRouter
 	.route("/")
-	.get((req, res, next) => {
+	.get(authenticate.verifyUser, (req, res, next) => {
 		res.statusCode = 403;
 		res.end("GET operation not supported on /imageUpload");
 	})
-	.post(upload.single("photo"), (req, res) => {
-		console.log("body", req.file.path);
-		res.status(200).json({
-			uri: req.file.uri,
+	.post(authenticate.verifyUser, upload.single("photo"), (req, res) => {
+		res.status(200);
+		res.setHeader("Content-Type", "application/json");
+		res.json({
+			uri: req.file.destination.replace("public", "") + "/" + req.file.filename,
 		});
 	})
 	.put(authenticate.verifyUser, (req, res, next) => {

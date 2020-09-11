@@ -91,7 +91,7 @@ UserRouter.post(
 			res.json({
 				success: true,
 				token: token,
-				status: "You are successfully logged in!",
+				user: req.user,
 			});
 		}
 	}

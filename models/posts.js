@@ -23,10 +23,11 @@ var Post = new Schema({
 		minlength: 10,
 	},
 	Category: {
-		type: [String],
-	},
-	pic: {
 		type: String,
+		maxlength: 30,
+	},
+	pics: {
+		type: [String],
 		required: true,
 	},
 	forsale: Boolean,

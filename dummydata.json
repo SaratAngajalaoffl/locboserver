@@ -1,9 +1,10 @@
 {
 	"posts": {
 		"price": 15,
+		"title": "test",
 		"description": "This is a test product",
 		"Category": "Test",
-		"pic": "/images/carousel/i.PNG",
+		"pics": ["/images/carousel/i.PNG"],
 		"forsale": true,
 		"forrent": false
 	},
