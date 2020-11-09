@@ -17,7 +17,7 @@ var app = express();
 
 //DB connection
 const url = config.mongoUrl;
-const connect = mongoose.connect(url, { useNewUrlParser: true });
+const connect = mongoose.connect(url, { useNewUrlParser: true,useUnifiedTopology: true,useCreateIndex:true });
 
 connect.then(
 	(db) => {

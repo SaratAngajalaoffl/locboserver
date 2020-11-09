@@ -1,0 +1,92 @@
+POST http://localhost:3000/users/signup HTTP/1.1
+content-type: application/json
+
+{
+    "username":"sairam",
+    "password":"password",
+    "nickname":"Sairam Murthy"
+}
+
+################################################
+
+POST http://localhost:3000/users/login HTTP/1.1
+content-type: application/json
+
+{
+    "username":"sairam",
+    "password":"password"
+}
+
+################################################
+
+GET http://localhost:3000/users/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmE5OGM0NTg2NzBmYTE0NjQ1NmY3ZjgiLCJpYXQiOjE2MDQ5NDcwMzQsImV4cCI6MTYwNDk1MDYzNH0.Wqc393hvO2iytjmH4xnrY2ax6h30sQJrDIAhVxJiGS0
+
+###############################################
+
+POST http://localhost:3000/posts/ HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmE5OGM0NTg2NzBmYTE0NjQ1NmY3ZjgiLCJpYXQiOjE2MDQ5NDcwMzQsImV4cCI6MTYwNDk1MDYzNH0.Wqc393hvO2iytjmH4xnrY2ax6h30sQJrDIAhVxJiGS0
+
+{
+    "price": 15,
+    "title": "test",
+    "description": "This is a test product",
+    "Category": "Test",
+    "pics": ["/images/carousel/i.PNG"],
+    "forsale": true,
+    "forrent": false
+}
+
+###############################################
+
+GET http://localhost:3000/posts/
+
+##############################################
+
+GET http://localhost:3000/users/chats
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmE5OGM0NTg2NzBmYTE0NjQ1NmY3ZjgiLCJpYXQiOjE2MDQ5NDcwMzQsImV4cCI6MTYwNDk1MDYzNH0.Wqc393hvO2iytjmH4xnrY2ax6h30sQJrDIAhVxJiGS0
+
+###############################################
+
+GET http://localhost:3000/users/chats/5fa990bc0653f706542f4e74
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmE5OGM0NTg2NzBmYTE0NjQ1NmY3ZjgiLCJpYXQiOjE2MDQ5NDcwMzQsImV4cCI6MTYwNDk1MDYzNH0.Wqc393hvO2iytjmH4xnrY2ax6h30sQJrDIAhVxJiGS0
+
+###############################################
+
+DELETE http://localhost:3000/users/chats/5fa9952915ccc73618f53f53
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmE5OGM0NTg2NzBmYTE0NjQ1NmY3ZjgiLCJpYXQiOjE2MDQ5NDcwMzQsImV4cCI6MTYwNDk1MDYzNH0.Wqc393hvO2iytjmH4xnrY2ax6h30sQJrDIAhVxJiGS0
+
+###############################################
+
+POST http://localhost:3000/users/chats
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmE5OGM0NTg2NzBmYTE0NjQ1NmY3ZjgiLCJpYXQiOjE2MDQ5NDcwMzQsImV4cCI6MTYwNDk1MDYzNH0.Wqc393hvO2iytjmH4xnrY2ax6h30sQJrDIAhVxJiGS0
+
+{
+    "post": "5fa98cc0f1637a29a47596d9",
+    "seller": "5fa98c458670fa146456f7f8"
+}
+
+###############################################
+
+GET http://localhost:3000/users/chats/5fa990bc0653f706542f4e74/messages
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmE5OGM0NTg2NzBmYTE0NjQ1NmY3ZjgiLCJpYXQiOjE2MDQ5NDcwMzQsImV4cCI6MTYwNDk1MDYzNH0.Wqc393hvO2iytjmH4xnrY2ax6h30sQJrDIAhVxJiGS0
+
+###############################################
+
+POST http://localhost:3000/users/chats/5fa990bc0653f706542f4e74/messages
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmE5OGM0NTg2NzBmYTE0NjQ1NmY3ZjgiLCJpYXQiOjE2MDQ5NDcwMzQsImV4cCI6MTYwNDk1MDYzNH0.Wqc393hvO2iytjmH4xnrY2ax6h30sQJrDIAhVxJiGS0
+
+{
+    "text": "Testing",
+    "sender":"5fa98c458670fa146456f7f8"
+}
+
+###############################################
+
+DELETE http://localhost:3000/users/chats/5fa990bc0653f706542f4e74/messages
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmE5OGM0NTg2NzBmYTE0NjQ1NmY3ZjgiLCJpYXQiOjE2MDQ5NDcwMzQsImV4cCI6MTYwNDk1MDYzNH0.Wqc393hvO2iytjmH4xnrY2ax6h30sQJrDIAhVxJiGS0
+
+###############################################
