@@ -1,12 +1,13 @@
-var mongoose = require("mongoose");
+var mongoose = require('mongoose');
+const categories = require('./categories');
 var Schema = mongoose.Schema;
-require("mongoose-currency").loadType(mongoose);
+require('mongoose-currency').loadType(mongoose);
 const Currency = mongoose.Types.Currency;
 
 var Post = new Schema({
 	user: {
 		type: mongoose.Schema.Types.ObjectId,
-		ref: "User",
+		ref: 'User',
 	},
 	price: {
 		type: Currency,
@@ -23,8 +24,8 @@ var Post = new Schema({
 		minlength: 10,
 	},
 	Category: {
-		type: String,
-		maxlength: 30,
+		type: mongoose.Schema.Types.ObjectId,
+		ref: categories,
 	},
 	pics: {
 		type: [String],
@@ -35,4 +36,4 @@ var Post = new Schema({
 	// Area
 });
 
-module.exports = mongoose.model("Post", Post);
+module.exports = mongoose.model('Post', Post);
